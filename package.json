@@ -1,0 +1,39 @@
+{
+  "name": "gigs-assessment",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@codemirror/legacy-modes": "^6.3.2",
+    "@types/node": "20.3.3",
+    "@types/react": "18.2.14",
+    "@types/react-dom": "18.2.6",
+    "@uiw/codemirror-theme-sublime": "^4.21.7",
+    "@uiw/codemirror-theme-vscode": "^4.21.7",
+    "@uiw/react-codemirror": "^4.21.7",
+    "autoprefixer": "10.4.14",
+    "eslint": "8.44.0",
+    "eslint-config-next": "13.4.7",
+    "flowbite": "^1.6.6",
+    "flowbite-react": "^0.4.9",
+    "next": "13.4.7",
+    "postcss": "8.4.24",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-sortablejs": "^6.1.4",
+    "sortablejs": "^1.15.0",
+    "tailwindcss": "3.3.2",
+    "typescript": "5.1.6",
+    "uuid": "^9.0.0",
+    "yaml": "^2.3.1"
+  },
+  "devDependencies": {
+    "@types/sortablejs": "^1.15.1",
+    "@types/uuid": "^9.0.2"
+  }
+}

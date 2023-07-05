@@ -1,0 +1,16 @@
+aside.sidebar {
+    flex: 0 0 auto;
+    width: var(--main-nav-width);
+    position: relative;
+    z-index: 1000;
+    @apply bg-slate-700;
+}
+
+header.logo {
+    padding: 1.5rem;
+    padding-bottom: 0.25rem;
+}
+
+nav.menu {
+    padding: 0.5rem;
+}

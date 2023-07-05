@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+} */
+
+:root {
+  --primary-bg: #ffffff;
+
+  --primary-text: #262A3E;
+  --secondary-text: #6A6F85;
+
+  --main-nav-width: 60px;
+  --border-radius: 8px;
+}
+
+html,
+body {
+  color: var(--primary-text);
+  line-height: 1.5rem;
+  @apply bg-gray-50;
+}
+
+body.noscroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.MainWrapper {
+  display: flex;
+  height: 100%;
+}
+.MainContent {
+  flex-grow: 1;
+}
+.MainContent.scrollable {
+  overflow-y: auto;
+}
