@@ -15,7 +15,7 @@ function getComponent(component: Component, field: AbstractUIField, composerAPI:
         case "UITextfield":
             return (<UITextfield composerAPI={composerAPI} field={field} />);
         default:
-            return (<div>No renderer for the form element "{field.uiComponentId}"</div>);
+            return (<div>No renderer for the form element {field.uiComponentId}</div>);
     }
 }
 
