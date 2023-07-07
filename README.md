@@ -38,3 +38,6 @@ The app itself doesn't have a real purpose, but it's more a showcase of a few pr
 - inheritance
 - factory pattern
 - editor pattern
+
+You can play with this app, by sorting the items on the right hand side column and notice the model being updated in the left hand side.
+Also the components A, B, C can be edited by double clicking on them and using the form. Once the changes are confirmed, once again, the changes are reflected in the model, in the left hand side column.
