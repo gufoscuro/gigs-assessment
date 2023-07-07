@@ -31,6 +31,8 @@ npm run start
 docker compose up -d
 ```
 
+In both ways, you can expect the application to be available here http://localhost:3000
+
 ## Notes
 The app itself doesn't have a real purpose, but it's more a showcase of a few practices/patterns.
 - inheritance
