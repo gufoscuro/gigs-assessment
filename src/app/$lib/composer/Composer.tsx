@@ -97,8 +97,7 @@ const Composer: FC = () => {
                         <Factory 
                             key={item.uuid} 
                             component={item} 
-                            composerAPI={composerAPI}
-                            triggerUpdate={triggerUpdate} />
+                            composerAPI={composerAPI} />
                     ))}
                 </ReactSortable>
             </div>

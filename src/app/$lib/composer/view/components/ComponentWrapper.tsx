@@ -18,7 +18,7 @@ const Wrapper: React.FC<ComponentWrapperProps> = ({ editing, selected, children,
     }, []);
 
     return (
-        <div onClick={onClick} className={"bg-white rounded-sm px-4 py-2 cursor-default " + (editing ? 'bg-blue-50 border border-solid border-blue-400' : '') + (selected ? ' bg-blue-50 border border-solid border-blue-400' : '')}>
+        <div onClick={onClick} className={"rounded-sm px-4 py-2 cursor-default " + (editing ? 'bg-blue-50 border border-solid border-blue-400' : 'bg-white') + (selected ? ' bg-blue-50 border border-solid border-blue-400' : '')}>
             {children}
         </div>
     );

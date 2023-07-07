@@ -12,6 +12,8 @@ export interface Component {
 
     setEditing: (value: boolean) => void;
     setSelected: (value: boolean) => void;
+    applyValues: () => void;
+    revertValues: () => void;
     getID: () => string;
     validate: () => Promise<boolean>;
     toJSON: () => any;
@@ -98,6 +100,14 @@ export abstract class IComponent implements Component {
         return this.uuid;
     }
 
+    applyValues () {
+
+    }
+
+    revertValues () {
+
+    }
+
     toJSON(): any {
         return {
             id: this.id,
@@ -149,8 +159,25 @@ export abstract class NameValue extends IComponent {
 
     constructor(data: any, parent: ComponentContainer) {
         super(data, parent);
-        this.name = new UITextfield('name', data.name ?? '', { label: 'Name' });
-        this.value = new UITextfield('value', data.value ?? '', { label: 'Value' });
+        this.name = new UITextfield('name', data.name ?? '', { label: 'Name', required: true });
+        this.value = new UITextfield('value', data.value ?? '', { label: 'Value', required: true });
+    }
+
+    applyValues () {
+        super.applyValues();
+        this.name.applyValue();
+        this.value.applyValue();
+    }
+
+    revertValues () {
+        super.revertValues();
+        this.name.revertValue();
+        this.value.revertValue();
+    }
+
+    async validate(): Promise<boolean> {
+        return (await Promise.all([ super.validate(), this.name.validate() ]))
+            .every(it => it === true);
     }
 
     toJSON(): any {
@@ -177,6 +204,16 @@ export class C extends IComponent {
     constructor(data: any, parent: ComponentContainer) {
         super(data, parent);
         this.content = new UITextfield('content', data.content ?? '', { label: 'Content' });
+    }
+
+    applyValues () {
+        super.applyValues();
+        this.content.applyValue();
+    }
+
+    revertValues () {
+        super.revertValues();
+        this.content.revertValue();
     }
 
     toJSON(): any {

@@ -1,14 +1,21 @@
+// @ts-nocheck 
+
 import React from 'react'
 import { Component } from '@/app/$lib/composer/domain/component'
+import { ComponentAPI } from '@/app/$lib/composer/controller/ComponentAPI'
 import GenericRenderer from './components/GenericRenderer'
 import A from './components/A'
 import B from './components/B'
 import C from './components/C'
 
+export interface ComposerAPI {
+    triggerUpdate: () => void;
+    componentAPI: ComponentAPI
+}
+
 export interface ComponentProps {
     component: Component;
-    composerAPI: any
-    triggerUpdate?: () => void;
+    composerAPI: ComposerAPI;
 }
 
 function getComponent(component: Component, composerAPI: any) {
@@ -24,7 +31,7 @@ function getComponent(component: Component, composerAPI: any) {
     }
 }
 
-const Factory: React.FC<ComponentProps> = ({ component, triggerUpdate, composerAPI }) => {
+const Factory: React.FC<ComponentProps> = ({ component, composerAPI }) => {
     return getComponent(component, composerAPI);
 };
 

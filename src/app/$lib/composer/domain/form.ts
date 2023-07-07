@@ -24,7 +24,7 @@ export abstract class AbstractUIField {
     label: string;
     isValid: boolean;
     errorMessage: string;
-    uiComponentID: string;
+    uiComponentId: string;
     required: boolean;
     disabled: boolean;
 
@@ -37,7 +37,7 @@ export abstract class AbstractUIField {
         this.required = options.required || false;
         this.disabled = options.disabled !== undefined ? options.disabled : false;
         this.errorMessage = '';
-        this.uiComponentID = '';
+        this.uiComponentId = '';
     }
 
     getValue(): any {
@@ -57,6 +57,7 @@ export abstract class AbstractUIField {
     }
 
     revertValue() {
+        this.resetError();
         this.editorValue = this.value;
     }
 
@@ -75,6 +76,11 @@ export abstract class AbstractUIField {
     async validate(): Promise<boolean> {
         this.isValid = true;
         return this.isValid;
+    }
+
+    protected resetError() {
+        this.errorMessage = '';
+        this.isValid = true;
     }
 }
 

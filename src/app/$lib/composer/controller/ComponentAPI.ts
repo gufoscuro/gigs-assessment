@@ -15,7 +15,7 @@ export class ComponentAPI {
         return ComponentAPI.instance;
     }
 
-    toggleEdit(target: Component) {
+    async toggleEdit(target: Component) {
         if (target.editing) {
             target.setEditing(false);
         } else {
@@ -25,6 +25,12 @@ export class ComponentAPI {
             target.setEditing(true);
             this.editingItem = target;
         }
+    }
+
+    cancelEdit() {
+        if (this.editingItem)
+            this.editingItem.setEditing(false);
+        this.editingItem = undefined;
     }
 
     onComponentClick(target: Component, _: MouseEvent) {
