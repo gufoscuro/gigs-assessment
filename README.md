@@ -18,6 +18,11 @@ npm install
 
 ```bash
 npm run dev
+
+// or
+
+npm run build
+npm run start
 ```
 
 ### Build and run it by using Docker (and docker-compose)
@@ -25,3 +30,9 @@ npm run dev
 ```bash
 docker compose up -d
 ```
+
+## Notes
+The app itself doesn't have a real purpose, but it's more a showcase of a few practices/patterns.
+- inheritance
+- factory pattern
+- editor pattern

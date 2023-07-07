@@ -9,7 +9,7 @@ const GenericRenderer: React.FC<ComponentProps> = ({ component, composerAPI }) =
         <ComponentWrapper selected={component.selected} editing={component.editing} component={component} composerAPI={composerAPI}>
             <div className="text-sm font-bold">GenericRenderer</div>
             {component.editing ? (
-                <>This component can't be edited so far</>
+                <div>This component cannot be edited so far</div>
             ) : (
                 <ComponentRenderer>
                     <pre className="text-sm text-gray-500">{renderer}</pre>
